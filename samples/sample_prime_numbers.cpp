@@ -43,8 +43,8 @@ int main()
     if (s.GetBit(m))
     {
       count++;
-      cout << setw(3) << m << " ";
-      if (k++ % 10 == 0)
+      cout << setw(10) << m << " ";
+      if (k++ % 3 == 0)
         cout << endl;
     }
   cout << endl;
