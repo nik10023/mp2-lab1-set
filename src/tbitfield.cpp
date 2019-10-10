@@ -11,7 +11,7 @@
 #include <iomanip>
 using namespace std;
 
-TBitField::TBitField(int len)
+TBitField::TBitField(int len) // конструктор создающий битовое поле длинны n
 {
 	if (len < 0)
 		throw("Wrong Length!");
@@ -39,14 +39,14 @@ TBitField::~TBitField()
 	MemLen = 0;
 }
 
-int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
+int TBitField::GetMemIndex(const int n) const // Функция, которая получает на вход номер бита, и ищет индекс элемента битового поля, в который будет записан бит
 {
 	if (n < 0 || n >= BitLen)
 		throw("Wrong Index!");
 	return n / (sizeof(TELEM) * 8);
 }
 
-TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
+TELEM TBitField::GetMemMask(const int n) const // Функция, которая получает на вход номер бита и создаёт его маску для последующих манипуляций с битовым полем
 {
 	if (n < 0 || n >= BitLen)
 		throw("Wrong Index!");

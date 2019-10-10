@@ -11,7 +11,7 @@
 #include <iomanip>
 using namespace std;
 
-TSet::TSet(int mp) : BitField(mp)
+TSet::TSet(int mp) : BitField(mp) // конструктор создающий множество мощности mp
 {
 	MaxPower = mp;
 }
@@ -22,8 +22,8 @@ TSet::TSet(const TSet &s) : BitField(s.BitField)
 	MaxPower = s.MaxPower;
 }
 
-// конструктор преобразования типа
-TSet::TSet(const TBitField &bf) : BitField(bf)
+
+TSet::TSet(const TBitField &bf) : BitField(bf)// конструктор преобразования типа
 {
 	MaxPower = bf.GetLength();
 }
