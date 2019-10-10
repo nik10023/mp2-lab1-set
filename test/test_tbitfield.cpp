@@ -50,6 +50,24 @@ TEST(TBitField, can_clear_bit)
   EXPECT_EQ(0, bf.GetBit(bitIdx));
 }
 
+TEST(TBitField, set_bit_throws_when_index_wrong)
+{
+	TBitField bf(32);
+
+	int bitIdx = 32;
+
+	ASSERT_ANY_THROW(bf.SetBit(bitIdx));
+}
+
+TEST(TBitField, get_bit_throws_when_index_wrong)
+{
+	TBitField bf(32);
+
+	int bitIdx = 32;
+
+	ASSERT_ANY_THROW(bf.GetBit(bitIdx));
+}
+
 TEST(TBitField, throws_when_create_bitfield_with_negative_length)
 {
   ASSERT_ANY_THROW(TBitField bf(-3));
